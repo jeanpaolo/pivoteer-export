@@ -1,0 +1,13 @@
+{
+  "active": true,
+  "current_phase": "ralplan",
+  "state": {
+    "slug": "pivoteer-azure-rds",
+    "status": "drafting",
+    "artifacts": {
+      "prd": "/home/ubuntu/pivoteer/.oman/plans/prd-pivoteer-azure-rds.md",
+      "test_spec": "/home/ubuntu/pivoteer/.oman/plans/test-spec-pivoteer-azure-rds.md",
+      "implementation_plan": "/home/ubuntu/pivoteer/.oman/plans/implementation-pivoteer-azure-rds.md"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "active": true,
+  "current_phase": "deep-interview",
+  "state": {
+    "profile": "standard",
+    "type": "greenfield",
+    "initial_idea": "Azure SQL Database exporter to AWS RDS SQL Server. DRY, minimal dependencies, self-bootstrapping, Linux/bash CLI, terabyte-scale, converts Azure-specific SQL features to AWS RDS compatible equivalents. User also wants: $ralplan for REST-to-CLI migration plan, $ralph for persistent implementation, $team 3:executor for parallel frontend/backend/data layer build.",
+    "rounds": [
+      {
+        "round": 1,
+        "dimension": "Scope + Outcome + Constraint + Intent",
+        "answers": {
+          "Q1": "B — tool exposes both REST API (backend control) and Linux CLI (frontend). API keeps backend running uninterrupted; CLI controls it.",
+          "Q2": "C+D — full migration (schema+data+jobs+logins where compatible) plus incremental sync via external tools if possible.",
+          "Q3": "Open — agent to recommend language with fewest deps and easiest maintenance.",
+          "Q4": "Include scheduled sync if possible."
+        },
+        "scores": {
+          "intent": 0.25,
+          "outcome": 0.20,
+          "scope": 0.35,
+          "constraint": 0.40,
+          "success_criteria": 0.60
+        },
+        "weighted_ambiguity": 0.36
+      }
+    ],
+    "current_ambiguity": 0.14,
+    "round3_answers": {
+      "Q10": "C+D — REST API polling + CLI STDOUT progress + SQLite job-log persistence across restarts.",
+      "Q11": "B — skip SQL Agent jobs entirely.",
+      "Q12": "D — fully user-configurable sync schedule per database profile, set dynamically via input."
+    },
+    "threshold_met": true,
+    "round2_answers": {
+      "Q5": "Python 3 + pyodbc + apscheduler approved. Add real-time migration status/progress reporting for multi-step processes.",
+      "Q6": "Direct TCP endpoints. Config file OR interactive questionnaire-style setup wizard. Per-server profiles.",
+      "Q7": "Tool runs on its own AWS/Azure instance to minimise data transfer costs. Output: compressed SQL files (.sql.gz) AND BACPAC. Both supported, flag-controlled.",
+      "Q8": "C — unit tests + integration tests. Integration tests gated behind flag, runnable once real instances are available.",
+      "Q9": "Drop Elastic Query, Drop Stretch DB, Skip OPENROWSET, Strip Azure Key Vault refs (keep column encryption skeleton), Drop geo-replication/failover groups. Keep RLS, temporal tables, JSON functions."
+    },
+    "threshold": 0.20,
+    "max_rounds": 12
+  }
+}

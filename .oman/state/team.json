@@ -1,0 +1,26 @@
+{
+  "active": true,
+  "current_phase": "team",
+  "state": {
+    "slug": "pivoteer-azure-rds",
+    "workers": 3,
+    "role": "executor",
+    "lanes": [
+      {
+        "id": "lane-1-frontend",
+        "description": "CLI frontend and REST API backend (pivoteer.py, api/server.py, core/config.py)",
+        "status": "pending"
+      },
+      {
+        "id": "lane-2-backend",
+        "description": "Migration engine and feature conversion (core/exporter.py, core/converter.py, core/importer.py)",
+        "status": "pending"
+      },
+      {
+        "id": "lane-3-data",
+        "description": "Data layer, scheduling, and job logging (core/connection.py, core/sync.py, core/scheduler.py, core/joblog.py, core/status.py)",
+        "status": "pending"
+      }
+    ]
+  }
+}
